@@ -1,56 +1,51 @@
 import React from "react";
-import { View,
-         Text,
-         StyleSheet,
-        TextInput, 
-        TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
-import Register from "../Register";
+import Home from "../Home";
 
-
-
-export default function SignIn(){
+export default function SignIn() {
     const navigation = useNavigation();
 
-    return(
+    return (
         <View style={styles.container}>
             <Animatable.View animation={"fadeInLeft"} delay={500} style={styles.containerHeader}>
-                <Text style = {styles.message}>Bem vindo(a)</Text>
+                <Text style={styles.message}>Bem vindo(a)</Text>
             </Animatable.View>
 
             <Animatable.View animation={"fadeInUp"} style={styles.containerForm}>
-                <Text style = {styles.title}>Email</Text>
+                <Text style={styles.title}>Email</Text>
                 <TextInput 
-                placeholder="example@example.com"
-                style = {styles.input}
+                    placeholder="example@example.com"
+                    style={styles.input}
                 />
-                <Text style = {styles.title}>Senha</Text>
+                <Text style={styles.title}>Senha</Text>
                 <TextInput 
-                placeholder="Digite sua senha" 
-                style = {styles.input}
-                secureTextEntry = {true}
+                    placeholder="Digite sua senha" 
+                    style={styles.input}
+                    secureTextEntry={true}
                 />
 
-            <TouchableOpacity style = {styles.button}>
-                <Text style = {styles.buttonText}>Acessar</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate(Home)}>
+                    <Text style={styles.buttonText}
+                    
+                    >Acessar</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style = {styles.buttonRegister}
-             onPress={() => navigation.navigate(Register)}>
-                <Text style = {styles.registerText}>Não possui uma conta? Cadastre-se</Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
+                    <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
+                </TouchableOpacity>
             </Animatable.View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         backgroundColor: '#5BA4FF'
     },
-    containerHeader:{
+    containerHeader: {
         marginTop: '20%',
         marginBottom: '8%',
         paddingStart: "15%"
@@ -60,11 +55,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#FFF'
     },
-    containerForm:{
-        backgroundColor:'#FFF',
+    containerForm: {
+        backgroundColor: '#FFF',
         flex: 1,
-        borderTopLeftRadius:25,
-        borderTopRightRadius:25,
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
         paddingStart: '5%',
         paddingEnd: '5%'
     },
@@ -72,13 +67,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginTop: 28
     },
-    input:{
+    input: {
         borderBottomWidth: 1,
         height: 40,
         marginBottom: 12,
         fontSize: 16
     },
-    button:{
+    button: {
         backgroundColor: '#5BA4FF',
         width: '100%',
         borderRadius: 4,
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
         marginTop: 14,
         alignSelf: 'center'
     },
-    registerText:{
+    registerText: {
         color: '#a1a1a1'
     }
 });

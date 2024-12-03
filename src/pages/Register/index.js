@@ -6,6 +6,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import Home from "../Home";
 
 export default function Register() {
+    
     const navigation = useNavigation();
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
