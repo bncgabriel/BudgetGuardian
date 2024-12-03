@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Platform } from "r
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import Home from "../Home";
 
 export default function Register() {
     const navigation = useNavigation();
@@ -72,7 +73,8 @@ export default function Register() {
                     secureTextEntry={true}
                 />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate(Home)}>
                     <Text style={styles.buttonText}>Cadastrar-me</Text>
                 </TouchableOpacity>
             </Animatable.View>
