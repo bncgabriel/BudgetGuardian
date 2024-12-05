@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "FinancialApp",
-    "slug": "FinancialApp",
+    "name": "BudgetGuardian",
+    "slug": "BudgetGuardian",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
